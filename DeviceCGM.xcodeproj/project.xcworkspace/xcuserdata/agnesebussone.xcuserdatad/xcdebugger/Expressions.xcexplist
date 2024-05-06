@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "TxtDatabase.readData():TxtDatabase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "db.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TxtDatabase.readDbFile():TxtDatabase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "db.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StreamReader.nextLine():StreamReader.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CGMDataFrame.getMinMaxMedian(for:during:):CGMDataFrame.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CGMDataFrame.getFilteredPatientData(for:during:):CGMDataFrame.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "patientData[cgmValue].count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
