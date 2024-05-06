@@ -2,7 +2,7 @@
 
 import Foundation
 
-public class TxtDatabase: CGMAnalysis {
+public class CGMDictionary: CGMAnalysis {
     private let txtFileURL: URL
     
     private enum RecordType {
