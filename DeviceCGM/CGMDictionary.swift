@@ -79,11 +79,9 @@ public class CGMDictionary: CGMAnalysis {
     }
     
     internal func readData() {
-        if let reader = StreamReader(path: txtFileURL.path()) {
-            defer {
-                reader.close()
-            }
-            while let line = reader.nextLine() {
+        if let reader = LineReader(path: txtFileURL.path()) {
+            
+            for line in reader {
                 if line.isEmpty {
                     continue
                 }

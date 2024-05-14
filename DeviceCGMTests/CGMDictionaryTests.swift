@@ -5,13 +5,13 @@ import XCTest
 
 final class CGMDictionaryTests: XCTestCase {
 
-    // Avg. 9 min
+    // Avg. 42 sec
     func test() {
         let db = CGMDictionary(fileURL: realFileURL())
         let ptId = 39
         var timeInterval = DateInterval(start: createDate("2000-03-25 00:02:56")!, end: createDate("2000-03-25 02:22:56")!)
         
-        // read the data before measuring the execution of the methods -> avg 8 min
+        // read the data before measuring the execution of the methods
         db.readData()
         
         // MARK: - Min-max-median
@@ -67,7 +67,7 @@ final class CGMDictionaryTests: XCTestCase {
         print("⏱️ Execution time for getHypoEventsCount(for: ptId, during: nil): \(String(format: "%.2f", end.timeIntervalSince(start)))") // -> 5.70 sec
     }
     
-    // Avg: 8 min . Memory usage constantly increases to 2.5 GB
+    // Avg: 30 sec . Memory usage constantly increases to ~ 800 MB
     func test_readingPerformance() {
         let start = Date()
         CGMDictionary(fileURL: realFileURL()).readData()
