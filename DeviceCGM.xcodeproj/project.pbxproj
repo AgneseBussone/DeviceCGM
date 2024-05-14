@@ -12,6 +12,7 @@
 		913AE7CF2BE6578B00B837F9 /* CGMDataFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7CE2BE6578B00B837F9 /* CGMDataFrameTests.swift */; };
 		913AE7D12BE7BD8600B837F9 /* CGMDataFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7D02BE7BD8600B837F9 /* CGMDataFrame.swift */; };
 		913AE7D52BE8F29300B837F9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7D42BE8F29300B837F9 /* Utils.swift */; };
+		9141D6E52BF33F5700BB37BB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141D6E42BF33F5700BB37BB /* Utils.swift */; };
 		9150D3152BE5202E00DACE2B /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D3142BE5202E00DACE2B /* StreamReader.swift */; };
 		9185B3FA2BE21F0E006CB492 /* DeviceCGM.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9185B3F92BE21F0E006CB492 /* DeviceCGM.docc */; };
 		9185B4002BE21F0E006CB492 /* DeviceCGM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9185B3F52BE21F0E006CB492 /* DeviceCGM.framework */; };
@@ -37,6 +38,7 @@
 		913AE7CE2BE6578B00B837F9 /* CGMDataFrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMDataFrameTests.swift; sourceTree = "<group>"; };
 		913AE7D02BE7BD8600B837F9 /* CGMDataFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMDataFrame.swift; sourceTree = "<group>"; };
 		913AE7D42BE8F29300B837F9 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9141D6E42BF33F5700BB37BB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9150D3142BE5202E00DACE2B /* StreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		9185B3F52BE21F0E006CB492 /* DeviceCGM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeviceCGM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9185B3F82BE21F0E006CB492 /* DeviceCGM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceCGM.h; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				913AE7D02BE7BD8600B837F9 /* CGMDataFrame.swift */,
 				9185B4162BE403BF006CB492 /* CGMDictionary.swift */,
 				9150D3142BE5202E00DACE2B /* StreamReader.swift */,
+				9141D6E42BF33F5700BB37BB /* Utils.swift */,
 				913AE7CC2BE656D300B837F9 /* DeviceCGMUtf8.txt */,
 				913274532BE4CAF80013E4D5 /* DeviceCGMOriginal.txt */,
 				9185B3F82BE21F0E006CB492 /* DeviceCGM.h */,
@@ -225,6 +228,7 @@
 				9185B4172BE403BF006CB492 /* CGMDictionary.swift in Sources */,
 				9150D3152BE5202E00DACE2B /* StreamReader.swift in Sources */,
 				9185B3FA2BE21F0E006CB492 /* DeviceCGM.docc in Sources */,
+				9141D6E52BF33F5700BB37BB /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
