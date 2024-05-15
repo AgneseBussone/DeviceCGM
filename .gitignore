@@ -2,3 +2,5 @@
 .vscode
 **/DeviceCGMOriginal.txt
 **/DeviceCGMUtf8.txt
+*.xcuserstate
+**/xcuserdata/
