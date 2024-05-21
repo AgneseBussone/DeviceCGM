@@ -5,14 +5,8 @@ import Foundation
 public class CGMDictionary: CGMAnalysis {
     private let txtFileURL: URL
     
-    private enum RecordType {
-        case CGM
-        case Calibration
-    }
-    
-    private struct Record {
+    fileprivate struct Record {
         let timestamp: String
-        let recordType: RecordType
         let value: Double
         
         func date() -> Date {
@@ -106,20 +100,21 @@ public class CGMDictionary: CGMAnalysis {
         guard elements.count == 8 else {
             return (-1, .none)
         }
+        
+        guard elements[4] == "CGM" else {
+            return (-1, .none)
+        }
 
         guard let ptId = Int(elements[1]) else {
             return (-1, .none)
         }
-                
-        let recordType = elements[4] == "CGM" ? RecordType.CGM : RecordType.Calibration
-        
+
         guard let value = Double(elements[5]) else {
             return (-1, .none)
         }
         
         return (ptId, Record(
             timestamp: elements[3],
-            recordType: recordType,
             value: value
         ))
     }
