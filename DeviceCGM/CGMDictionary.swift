@@ -68,28 +68,38 @@ public class CGMDictionary: CGMAnalysis {
     
     private func ensureDb() {
         if db.isEmpty {
-            readData()
+            readDataWithLineReader()
         }
     }
     
-    internal func readData() {
+    internal func readDataWithLineReader() {
+        if let reader = LineReader(path: txtFileURL.path()) {
+            for line in reader {
+                readLine(line)
+            }
+        }
+    }
+    
+    internal func readDataWithStreamReader() {
         if let reader = StreamReader(path: txtFileURL.path()) {
             defer {
                 reader.close()
             }
             while let line = reader.nextLine() {
-                if line.isEmpty {
-                    continue
-                }
-                
-                let (ptId, record) = readRecordLine(line)
-                if ptId > -1 {
-                    if db[ptId] == nil {
-                        db[ptId] = []
-                    }
-                    db[ptId]?.append(record!)
-                }
+                readLine(line)
             }
+        }
+    }
+    
+    private func readLine(_ line: String) {
+        if line.isEmpty { return }
+        
+        let (ptId, record) = readRecordLine(line)
+        if ptId > -1 {
+            if db[ptId] == nil {
+                db[ptId] = []
+            }
+            db[ptId]?.append(record!)
         }
     }
     

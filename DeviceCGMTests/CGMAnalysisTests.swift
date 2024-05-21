@@ -14,9 +14,24 @@ final class CGMAnalysisTests: XCTestCase {
 //    ⏱️ Execution time for getHypoEventsCount(for: ptId, during: timeInterval): 0.42
 //    Hypo count for patient 39 = 50
 //    ⏱️ Execution time for getHypoEventsCount(for: ptId, during: nil): 5.66
-    func test_dictionary() {
+    func test_dictionary_streamReader() {
         let db = CGMDictionary(fileURL: realFileURL())
-        db.readData()
+        db.readDataWithStreamReader()
+        allMethods(db)
+    }
+
+//    Avg. time: 42 sec
+//    ⏱️ Execution time for getMinMaxMedian(for: ptId, during: timeInterval): 0.41
+//    ⏱️ Execution time for getMinMaxMedian(for: ptId, during: nil): 0.17
+//    ⏱️ Execution time for getOrderedMeasurements(for: ptId, during: timeInterval): 0.41
+//    Total number of measurments for patient 39 = 109918
+//    ⏱️ Execution time for getOrderedMeasurements(for: ptId, during: nil): 5.66
+//    ⏱️ Execution time for getHypoEventsCount(for: ptId, during: timeInterval): 0.41
+//    Hypo count for patient 39 = 50
+//    ⏱️ Execution time for getHypoEventsCount(for: ptId, during: nil): 5.64
+    func test_dictionary2_lineReader() {
+        let db = CGMDictionary(fileURL: realFileURL())
+        db.readDataWithLineReader()
         allMethods(db)
     }
 
@@ -91,10 +106,18 @@ final class CGMAnalysisTests: XCTestCase {
         print("⏱️ Execution time for getHypoEventsCount(for: ptId, during: nil): \(String(format: "%.2f", end.timeIntervalSince(start)))")
     }
     
-    // Avg: 30 sec . Memory usage constantly increases to ~ 800 MB
-    func test_dictionaryReadingPerformance() {
+    // Avg: 41 sec. Memory usage constantly increases to ~ 1.2GB
+    func test_dictionaryReadingPerformance_streamReader() {
         let start = Date()
-        CGMDictionary(fileURL: realFileURL()).readData()
+        CGMDictionary(fileURL: realFileURL()).readDataWithStreamReader()
+        let end = Date()
+        print("⏱️ Execution time: \(String(format: "%.2f", end.timeIntervalSince(start)))")
+    }
+
+    // Avg: 30 sec. Memory usage constantly increases to ~ 760MB
+    func test_dictionaryReadingPerformance_lineReader() {
+        let start = Date()
+        CGMDictionary(fileURL: realFileURL()).readDataWithLineReader()
         let end = Date()
         print("⏱️ Execution time: \(String(format: "%.2f", end.timeIntervalSince(start)))")
     }
