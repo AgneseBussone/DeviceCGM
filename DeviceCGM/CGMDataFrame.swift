@@ -7,8 +7,6 @@ public class CGMDataFrame: CGMAnalysis {
     private let fileURL: URL
     private var dataFrame: DataFrame? = nil
     
-    private let dateParseStrategy = Date.ParseStrategy(format: "\(year: .defaultDigits)-\(month: .twoDigits)-\(day: .twoDigits) \(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .zeroBased)):\(minute: .twoDigits):\(second: .twoDigits)", timeZone: TimeZone(secondsFromGMT: 0)!)
-    
     // Columns to be read from the file
     private let ptId = ColumnID("PtID", Int.self)
     private let deviceTime = ColumnID("DeviceDtTm", String.self)
@@ -38,7 +36,7 @@ public class CGMDataFrame: CGMAnalysis {
            let median = patientSummary[SummaryColumnIDs.median.name, Double.self][0]
         {
 //            print(patientSummary.description(options: formattingOptions))
-            return PatientMinMaxMedian(min: min, max: max, median: median)
+            return PatientMinMaxMedian(min: Int(min), max: Int(max), median: median)
             
         } else {
             return nil
@@ -47,32 +45,8 @@ public class CGMDataFrame: CGMAnalysis {
     
     public func getHypoEventsCount(for patientId: PatiendId, during timeInterval: DateInterval?) -> Int {
         ensureDataFrame()
-        
         let patientData = getOrderedMeasurements(for: patientId, during: timeInterval)
-        
-        if !patientData.isEmpty {
-            var hypoEvents = 0
-            var start: Date? = nil
-            var end: Date? = nil
-            patientData.forEach {
-                if $0.cgm < 70 {
-                    if start == nil {
-                        start = $0.timestamp
-                    } else {
-                        end = $0.timestamp
-                    }
-                } else {
-                    if let s = start, let e = end, isAtLeastFifteenMinutesApart(s, e) {
-                        hypoEvents += 1
-                    }
-                    start = nil
-                    end = nil
-                }
-            }
-            return hypoEvents
-        }
-        
-        return 0
+        return countHypoEvents(patientData)
     }
     
     public func getOrderedMeasurements(for patientId: PatiendId, during timeInterval: DateInterval?) -> [PatientMeasurement] {
@@ -89,15 +63,10 @@ public class CGMDataFrame: CGMAnalysis {
             let measures = patientData.selecting(columnNames: [deviceTime.name, cgmValue.name])
             
             return measures.rows.map { row in
-                PatientMeasurement(timestamp: row[0] as! Date, cgm: row[1] as! Double)}
+                PatientMeasurement(timestamp: row[0] as! Date, cgm: Int(row[1] as! Double))}
         }
         
         return []
-    }
-    
-    private func isAtLeastFifteenMinutesApart(_ date1: Date, _ date2: Date) -> Bool {
-        let difference = abs(date2.timeIntervalSince(date1))
-        return difference >= 15 * 60
     }
     
     private func getFilteredPatientData(for patientId: PatiendId, during timeInterval: DateInterval?) -> DataFrame? {
