@@ -25,7 +25,7 @@ public class CGMDictionary: CGMAnalysis {
         if let patientData = db[patientId] {
             
             let values = patientData
-                .filter { $0.recordType == .CGM && interval?.contains($0.date()) ?? true }
+                .filterByDate(interval)
                 .map { $0.value }
                 .sorted()
             
@@ -52,7 +52,7 @@ public class CGMDictionary: CGMAnalysis {
         ensureDb()
         if let patientData = db[patientId] {
             return patientData
-                .filter { $0.recordType == .CGM && interval?.contains($0.date()) ?? true }
+                .filterByDate(interval)
                 .sorted { $0.date() < $1.date() }
                 .map { PatientMeasurement(timestamp: $0.date(), cgm: $0.value) }
         }
@@ -117,5 +117,11 @@ public class CGMDictionary: CGMAnalysis {
             timestamp: elements[3],
             value: value
         ))
+    }
+}
+
+extension Array where Element == CGMDictionary.Record {
+    func filterByDate(_ interval: DateInterval?) -> Self {
+        return self.filter { interval?.contains($0.date()) ?? true }
     }
 }
