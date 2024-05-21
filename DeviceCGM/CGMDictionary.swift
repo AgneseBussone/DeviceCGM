@@ -42,7 +42,7 @@ public class CGMDictionary: CGMAnalysis {
                 median = Double(values[count / 2])
             }
             
-            return PatientMinMaxMedian(min: values.min()!, max: values.max()!, median: median)
+            return PatientMinMaxMedian(min: values.first!, max: values.last!, median: median)
         }
         
         return nil
