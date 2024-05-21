@@ -7,7 +7,7 @@ public class CGMDictionary: CGMAnalysis {
     
     fileprivate struct Record {
         let timestamp: String
-        let value: Double
+        let value: Int
         
         func date() -> Date {
             try! dateParseStrategy.parse(timestamp)
@@ -37,9 +37,9 @@ public class CGMDictionary: CGMAnalysis {
             let count = values.count
             let median: Double
             if count % 2 == 0 {
-                median = (values[count / 2 - 1] + values[count / 2]) / 2
+                median = Double((values[count / 2 - 1] + values[count / 2]) / 2)
             } else {
-                median = values[count / 2]
+                median = Double(values[count / 2])
             }
             
             return PatientMinMaxMedian(min: values.min()!, max: values.max()!, median: median)
@@ -109,7 +109,7 @@ public class CGMDictionary: CGMAnalysis {
             return (-1, .none)
         }
 
-        guard let value = Double(elements[5]) else {
+        guard let value = Int(elements[5]) else {
             return (-1, .none)
         }
         

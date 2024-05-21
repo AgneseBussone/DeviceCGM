@@ -36,7 +36,7 @@ public class CGMDataFrame: CGMAnalysis {
            let median = patientSummary[SummaryColumnIDs.median.name, Double.self][0]
         {
 //            print(patientSummary.description(options: formattingOptions))
-            return PatientMinMaxMedian(min: min, max: max, median: median)
+            return PatientMinMaxMedian(min: Int(min), max: Int(max), median: median)
             
         } else {
             return nil
@@ -63,7 +63,7 @@ public class CGMDataFrame: CGMAnalysis {
             let measures = patientData.selecting(columnNames: [deviceTime.name, cgmValue.name])
             
             return measures.rows.map { row in
-                PatientMeasurement(timestamp: row[0] as! Date, cgm: row[1] as! Double)}
+                PatientMeasurement(timestamp: row[0] as! Date, cgm: Int(row[1] as! Double))}
         }
         
         return []

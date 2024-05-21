@@ -5,14 +5,14 @@ import Foundation
 public typealias PatiendId = Int
 
 public struct PatientMinMaxMedian {
-    public let min: Double
-    public let max: Double
+    public let min: Int
+    public let max: Int
     public let median: Double
 }
 
 public struct PatientMeasurement {
     public let timestamp: Date
-    public let cgm: Double
+    public let cgm: Int
 }
 
 public protocol CGMAnalysis {
