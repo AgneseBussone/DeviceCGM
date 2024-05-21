@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		913274542BE4CAF80013E4D5 /* DeviceCGMOriginal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 913274532BE4CAF80013E4D5 /* DeviceCGMOriginal.txt */; };
 		913AE7CD2BE656D300B837F9 /* DeviceCGMUtf8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 913AE7CC2BE656D300B837F9 /* DeviceCGMUtf8.txt */; };
-		913AE7CF2BE6578B00B837F9 /* CGMDataFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7CE2BE6578B00B837F9 /* CGMDataFrameTests.swift */; };
 		913AE7D12BE7BD8600B837F9 /* CGMDataFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7D02BE7BD8600B837F9 /* CGMDataFrame.swift */; };
-		913AE7D52BE8F29300B837F9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AE7D42BE8F29300B837F9 /* Utils.swift */; };
 		9141D6E52BF33F5700BB37BB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141D6E42BF33F5700BB37BB /* Utils.swift */; };
 		9141D6E72BF3455400BB37BB /* LineReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141D6E62BF3455400BB37BB /* LineReader.swift */; };
 		9150D3152BE5202E00DACE2B /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9150D3142BE5202E00DACE2B /* StreamReader.swift */; };
@@ -20,7 +18,7 @@
 		9185B4062BE21F0E006CB492 /* DeviceCGM.h in Headers */ = {isa = PBXBuildFile; fileRef = 9185B3F82BE21F0E006CB492 /* DeviceCGM.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9185B4102BE22594006CB492 /* CGMAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185B40F2BE22594006CB492 /* CGMAnalysis.swift */; };
 		9185B4172BE403BF006CB492 /* CGMDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185B4162BE403BF006CB492 /* CGMDictionary.swift */; };
-		9185B41B2BE4C1E9006CB492 /* CGMDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185B41A2BE4C1E9006CB492 /* CGMDictionaryTests.swift */; };
+		9185B41B2BE4C1E9006CB492 /* CGMAnalysisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9185B41A2BE4C1E9006CB492 /* CGMAnalysisTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +34,7 @@
 /* Begin PBXFileReference section */
 		913274532BE4CAF80013E4D5 /* DeviceCGMOriginal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DeviceCGMOriginal.txt; sourceTree = "<group>"; };
 		913AE7CC2BE656D300B837F9 /* DeviceCGMUtf8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DeviceCGMUtf8.txt; sourceTree = "<group>"; };
-		913AE7CE2BE6578B00B837F9 /* CGMDataFrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMDataFrameTests.swift; sourceTree = "<group>"; };
 		913AE7D02BE7BD8600B837F9 /* CGMDataFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMDataFrame.swift; sourceTree = "<group>"; };
-		913AE7D42BE8F29300B837F9 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9141D6E42BF33F5700BB37BB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9141D6E62BF3455400BB37BB /* LineReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineReader.swift; sourceTree = "<group>"; };
 		9150D3142BE5202E00DACE2B /* StreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
@@ -48,7 +44,7 @@
 		9185B3FF2BE21F0E006CB492 /* DeviceCGMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviceCGMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9185B40F2BE22594006CB492 /* CGMAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMAnalysis.swift; sourceTree = "<group>"; };
 		9185B4162BE403BF006CB492 /* CGMDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMDictionary.swift; sourceTree = "<group>"; };
-		9185B41A2BE4C1E9006CB492 /* CGMDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMDictionaryTests.swift; sourceTree = "<group>"; };
+		9185B41A2BE4C1E9006CB492 /* CGMAnalysisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGMAnalysisTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +104,7 @@
 		9185B4032BE21F0E006CB492 /* DeviceCGMTests */ = {
 			isa = PBXGroup;
 			children = (
-				9185B41A2BE4C1E9006CB492 /* CGMDictionaryTests.swift */,
-				913AE7CE2BE6578B00B837F9 /* CGMDataFrameTests.swift */,
-				913AE7D42BE8F29300B837F9 /* Utils.swift */,
+				9185B41A2BE4C1E9006CB492 /* CGMAnalysisTests.swift */,
 			);
 			path = DeviceCGMTests;
 			sourceTree = "<group>";
@@ -240,9 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9185B41B2BE4C1E9006CB492 /* CGMDictionaryTests.swift in Sources */,
-				913AE7CF2BE6578B00B837F9 /* CGMDataFrameTests.swift in Sources */,
-				913AE7D52BE8F29300B837F9 /* Utils.swift in Sources */,
+				9185B41B2BE4C1E9006CB492 /* CGMAnalysisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
