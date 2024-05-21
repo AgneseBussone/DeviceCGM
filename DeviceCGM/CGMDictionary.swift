@@ -109,13 +109,13 @@ public class CGMDictionary: CGMAnalysis {
             return (-1, .none)
         }
 
-        guard let value = Int(elements[5]) else {
+        guard let value = Double(elements[5]) else {
             return (-1, .none)
         }
         
         return (ptId, Record(
             timestamp: elements[3],
-            value: value
+            value: Int(value)
         ))
     }
 }
